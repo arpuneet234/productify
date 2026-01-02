@@ -21,7 +21,15 @@ ul > li {
 .card {
   width: 200px;
   border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
 }
 .card > img {
   height: 200px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
