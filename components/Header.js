@@ -11,7 +11,6 @@ const Header = () => {
   return (
     <div className="header">
       {title}
-
       <ul>
         <li>Home</li>
         <li>About</li>
