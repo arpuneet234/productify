@@ -38,3 +38,6 @@ ul > li {
 .durvish {
   color: rgb(118, 91, 186);
 }
+.product-details > img {
+  width: 200px;
+}

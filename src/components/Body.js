@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 function filter(searchText, allProducts) {
   let filteredListd = allProducts.filter((product) => {
@@ -52,7 +53,11 @@ const Body = () => {
 
         <div className="product-list">
           {filteredList.map((product, index) => {
-            return <ProductCard {...product} key={index} />;
+            return (
+              <Link key={index} to={"/product/" + product.id}>
+                <ProductCard {...product} />
+              </Link>
+            );
           })}
         </div>
       </div>

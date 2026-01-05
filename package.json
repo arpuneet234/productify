@@ -20,7 +20,10 @@
   },
   "dependencies": {
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "react-router": "^6.14.2",
+    "react-router-dom": "^6.14.2",
+    "react-shimmer-effects": "^1.0.4"
   },
   "devDependencies": {
     "parcel": "^2.16.3"
