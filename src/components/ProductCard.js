@@ -1,9 +1,6 @@
 import { productsList } from "../constants";
 
 const ProductCard = ({ title, tags, price, images }) => {
-  {
-    console.log(images);
-  }
   return (
     <div className="card">
       <img src={images}></img>
