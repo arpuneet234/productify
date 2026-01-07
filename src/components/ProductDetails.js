@@ -1,20 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useProduct from "../utils/useProduct";
 const ProductDetails = () => {
   const { id } = useParams();
   console.log(useParams());
-  const [data, setData] = useState({});
-  console.log(data.images);
-  useEffect(() => {
-    getProductInfo();
-  }, []);
+  //const [data, setData] = useState({});
 
-  async function getProductInfo() {
-    const data = await fetch("https://api.escuelajs.co/api/v1/products/" + id);
-    const json = await data.json();
-    console.log(json);
-    setData(json);
-  }
+  const data = useProduct(id);
 
   return (
     <div className="product-details">

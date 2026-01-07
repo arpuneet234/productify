@@ -2,13 +2,8 @@ import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function filter(searchText, allProducts) {
-  let filteredListd = allProducts.filter((product) => {
-    return product.title.toLowerCase().includes(searchText.toLowerCase());
-  });
-  return filteredListd;
-}
+import { filter } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -28,7 +23,12 @@ const Body = () => {
     setAllProducts(json);
   }
 
-  if (filteredList.length === 0) {
+  const isOnline = useOnline();
+
+  console.log(isOnline);
+
+  if (!isOnline) return <h1>🔴 You are offline Please Check your Internet</h1>;
+  else if (filteredList.length === 0) {
     return <Shimmer />;
   } else
     return (
