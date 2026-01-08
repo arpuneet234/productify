@@ -33,8 +33,9 @@ const Body = () => {
   } else
     return (
       <div>
-        <div className="Search-Bar">
+        <div className="Search-Bar p-5 my-2 bg-amber-100">
           <input
+            className="bg-amber-50 focus:bg-green-100"
             type="text"
             placeholder="Search"
             value={searchText}
@@ -43,6 +44,7 @@ const Body = () => {
             }}
           />
           <button
+            className="p-2 bg-amber-600 text-white mx-2 rounded-lg hover:bg-amber-900 "
             onClick={(e) => {
               setfilteredList(filter(searchText, allProducts));
             }}
@@ -51,7 +53,7 @@ const Body = () => {
           </button>
         </div>
 
-        <div className="product-list">
+        <div className="product-list flex flex-wrap">
           {filteredList.map((product, index) => {
             return (
               <Link key={index} to={"/product/" + product.id}>
