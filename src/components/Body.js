@@ -1,14 +1,17 @@
 import ProductCard from "./ProductCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filter } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredList, setfilteredList] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     getProducts();
@@ -16,9 +19,9 @@ const Body = () => {
 
   async function getProducts() {
     const data = await fetch("https://api.escuelajs.co/api/v1/products");
-    console.log(data);
+
     const json = await data.json();
-    console.log(json);
+
     setfilteredList(json);
     setAllProducts(json);
   }
@@ -51,6 +54,13 @@ const Body = () => {
           >
             Search
           </button>
+          <input
+            className="bg-amber-50"
+            value={user.name}
+            onChange={(e) => {
+              setUser({ ...user, name: e.target.value });
+            }}
+          ></input>
         </div>
 
         <div className="product-list flex flex-wrap">

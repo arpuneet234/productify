@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState } from "react";
 import "./index.css";
+import UserContext from "./utils/UserContext";
 
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
@@ -16,14 +17,21 @@ import Shimmer from "./components/Shimmer";
 const Instamart = lazy(() => import("./components/Instamart"));
 const AppLayout = () => {
   const [user, setUser] = useState({
-    name: "Dummy",
-    email: "dummy@gmail.com",
+    name: "Puneet Arora",
+    email: "arorapuneet234@gmail.com",
   });
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider
+        value={{
+          user: user,
+          setUser: setUser,
+        }}
+      >
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </>
   );
 };

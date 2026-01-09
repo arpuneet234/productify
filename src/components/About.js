@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import ProfileClass from "./ProfileClass";
 import ProfileFunctional from "./Profile.js";
 import React from "react";
+import UserContext from "../utils/UserContext.js";
 
 class About extends React.Component {
   constructor(props) {
@@ -18,6 +19,9 @@ class About extends React.Component {
     return (
       <div>
         <h1>About us page</h1>
+        <UserContext.Consumer>
+          {({ user }) => <h1>{user.name}</h1>}
+        </UserContext.Consumer>
         <ProfileFunctional name={"Puneet"} />
         <ProfileClass name={"Akshay"} />
       </div>
