@@ -19,8 +19,10 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.14.2",
     "react-shimmer-effects": "^1.0.4"
   },
