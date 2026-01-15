@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const title = (
   <a href="/">
     <img
+      data-testid="logo"
       className="h-28 p-3"
       alt="Productify Logo"
       src="https://www.logoai.com/uploads/output/2022/01/16/844f6937a6cbf4a3082e133e72f5cf39.jpg"
@@ -36,7 +37,7 @@ const Header = () => {
         <li className="px-2">
           <Link to="/instamart">Instamart</Link>
         </li>
-        <li className="px-2">
+        <li className="px-2" data-testid="cart">
           <Link to="/cart">Cart - {cartItems.length} Items</Link>
         </li>
       </ul>

@@ -2,7 +2,7 @@ import { ShimmerSimpleGallery } from "react-shimmer-effects";
 
 const Shimmer = () => {
   return (
-    <>
+    <div data-testid="shimmer">
       <ShimmerSimpleGallery
         imageType="thumbnail"
         row={10}
@@ -12,7 +12,7 @@ const Shimmer = () => {
       />
       <ShimmerSimpleGallery card imageHeight={300} />
       <ShimmerSimpleGallery card imageHeight={300} caption />
-    </>
+    </div>
   );
 };
 

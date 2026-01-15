@@ -47,6 +47,7 @@ const Body = () => {
             }}
           />
           <button
+            data-testid="search-btn"
             className="p-2 bg-amber-600 text-white mx-2 rounded-lg hover:bg-amber-900 "
             onClick={(e) => {
               setfilteredList(filter(searchText, allProducts));
